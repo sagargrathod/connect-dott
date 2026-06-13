@@ -1,0 +1,50 @@
+export const COLORS = {
+  dark: {
+    bg: '#030303',
+    glass: 'rgba(10, 10, 10, 0.6)',
+    border: 'rgba(255, 255, 255, 0.08)',
+    accentPrimary: '#00E5FF',
+    accentSecondary: '#FF007F',
+    text: '#9CA3AF',
+    textHeader: '#F3F4F6',
+  },
+  light: {
+    bg: '#F5F7FA',
+    glass: 'rgba(255, 255, 255, 0.5)',
+    border: 'rgba(0, 0, 0, 0.05)',
+    accentPrimary: '#4285F4',
+    accentSecondary: '#FF6B35',
+    text: '#6B6375',
+    textHeader: '#08060D',
+  },
+  themes: {
+    midnightNeon: {
+      name: 'Midnight Neon',
+      bg: '#030303',
+      panel: 'rgba(10, 10, 10, 0.8)',
+      dots: ['#00E5FF', '#FF007F', '#39FF14', '#FFD700', '#00E5FF'],
+      line: '#00E5FF',
+    },
+    retroPink: {
+      name: 'Retro Pink',
+      bg: '#1A0B2E',
+      panel: 'rgba(26, 11, 46, 0.8)',
+      dots: ['#FF007F', '#FF6B35', '#AA3BFF', '#FFD700', '#FF007F'],
+      line: '#FF007F',
+    },
+    cyberGold: {
+      name: 'Cyber Gold',
+      bg: '#0D0D0D',
+      panel: 'rgba(13, 13, 13, 0.8)',
+      dots: ['#FFD700', '#FF8C00', '#39FF14', '#00E5FF', '#FFD700'],
+      line: '#FFD700',
+    },
+    oceanDrift: {
+      name: 'Ocean Drift',
+      bg: '#0B1E2E',
+      panel: 'rgba(11, 30, 46, 0.8)',
+      dots: ['#4285F4', '#00E5FF', '#2ECC71', '#3498DB', '#4285F4'],
+      line: '#00E5FF',
+    },
+  },
+};
