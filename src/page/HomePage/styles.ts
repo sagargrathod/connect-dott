@@ -12,20 +12,6 @@ export const getStyles = (theme: 'dark' | 'light') => {
     heroTagline: {
       color: c.accentSecondary,
     },
-    phoneAccent: c.accentPrimary,
-    phoneSecondary: c.accentSecondary,
-    phoneMuted: c.text,
-    showcaseContainer: {
-      padding: '40px',
-      borderRadius: '24px',
-    },
-    showcaseOuter: (bg: string) => ({
-      backgroundColor: bg,
-      border: `1px solid ${c.border}`,
-    }),
-    showcaseGrid: {
-      backgroundColor: 'rgba(0,0,0,0.2)',
-    },
     showcaseTitle: {
       color: c.textHeader,
     },
@@ -37,3 +23,4 @@ export const getStyles = (theme: 'dark' | 'light') => {
     },
   };
 };
+

@@ -38,8 +38,18 @@ const Navigation: React.FC<NavigationProps> = ({
         style={styles.header}
       >
         <div className="logo-section" onClick={handleHomeClick}>
-          <div className="logo-icon">
-            <div className="logo-dot"></div>
+          <div className="logo-icon-circle">
+            <svg 
+              viewBox="0 0 512 512" 
+              className="logo-icon-svg"
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="32"
+            >
+              <circle cx="256" cy="256" r="96" />
+              <line x1="32" y1="256" x2="160" y2="256" strokeLinecap="round" />
+              <line x1="352" y1="256" x2="480" y2="256" strokeLinecap="round" />
+            </svg>
           </div>
           <span className="logo-text" style={styles.logoText}>
             DOTS<span style={styles.logoSpan}>CONNECT</span>
