@@ -8,6 +8,7 @@ import PrivacyPage from './page/PrivacyPage';
 import TermsPage from './page/TermsPage';
 
 import type { TabType } from './navigation/types';
+// deploy trigger
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
