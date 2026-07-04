@@ -13,6 +13,37 @@ import type { TabType } from './navigation/types';
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('dark');
   const [currentTab, setCurrentTab] = useState<TabType>('home');
+  const [isWebViewPath, setIsWebViewPath] = useState<boolean>(false);
+  const [webViewRoute, setWebViewRoute] = useState<string>('');
+
+  // Handle pathname routing and theme query params
+  useEffect(() => {
+    const path = window.location.pathname.toLowerCase();
+    
+    // Check if current URL matches a standalone webview route
+    const isLegalOrAboutPath = [
+      '/about',
+      '/privacy',
+      '/privacy-policy',
+      '/terms',
+      '/terms-and-conditions',
+    ].includes(path);
+
+    if (isLegalOrAboutPath) {
+      setIsWebViewPath(true);
+      setWebViewRoute(path);
+    } else {
+      setIsWebViewPath(false);
+      setWebViewRoute('');
+    }
+
+    // Read theme selection from query params (e.g. ?theme=light)
+    const params = new URLSearchParams(window.location.search);
+    const themeParam = params.get('theme');
+    if (themeParam === 'light' || themeParam === 'dark') {
+      setTheme(themeParam);
+    }
+  }, []);
 
   // Handle scroll events to update CSS scroll variable
   useEffect(() => {
@@ -50,6 +81,8 @@ function App() {
 
   // Scroll reveal setup using Intersection Observer
   useEffect(() => {
+    if (isWebViewPath) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -67,7 +100,7 @@ function App() {
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };
-  }, [currentTab]);
+  }, [currentTab, isWebViewPath]);
 
   const handleTabChange = (tab: TabType) => {
     setCurrentTab(tab);
@@ -78,6 +111,33 @@ function App() {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
+  // Standalone Mobile WebView View
+  if (isWebViewPath) {
+    return (
+      <div className="webview-page-container">
+        {/* Background slowly morphing blobs */}
+        <div className="blob-container">
+          <div className="blob blob-1"></div>
+          <div className="blob blob-2"></div>
+          <div className="blob blob-3"></div>
+        </div>
+
+        <div className="webview-content-card">
+          {(webViewRoute === '/privacy' || webViewRoute === '/privacy-policy') && (
+            <PrivacyPage theme={theme} />
+          )}
+          {(webViewRoute === '/terms' || webViewRoute === '/terms-and-conditions') && (
+            <TermsPage theme={theme} />
+          )}
+          {webViewRoute === '/about' && (
+            <AboutPage theme={theme} />
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // Full Landing Page View
   return (
     <>
       {/* Background slowly morphing blobs */}

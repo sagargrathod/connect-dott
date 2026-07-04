@@ -24,11 +24,5 @@ export const getStyles = (theme: 'dark' | 'light') => {
     aboutLastParagraph: {
       marginBottom: '40px',
     },
-    statNum: {
-      color: primaryColor,
-    },
-    statLabel: {
-      color: c.text,
-    },
   };
 };

@@ -26,21 +26,6 @@ const AboutPage: React.FC<AboutPageProps> = ({ theme }) => {
         <p className="about-p" style={styles.aboutLastParagraph}>
           Created by an independent game development studio dedicated to crafting clean, high-performance mobile experiences. We abide by strict, ad-supported and coin-rewarded fair play—no pay-to-win mechanics, just pure logic and concentration.
         </p>
-        
-        <div className="about-highlight-box">
-          <div className="about-stat-item">
-            <div className="about-stat-num" style={styles.statNum}>10M+</div>
-            <div className="about-stat-label" style={styles.statLabel}>Active Players</div>
-          </div>
-          <div className="about-stat-item">
-            <div className="about-stat-num" style={styles.statNum}>4.8</div>
-            <div className="about-stat-label" style={styles.statLabel}>App Store Rating</div>
-          </div>
-          <div className="about-stat-item">
-            <div className="about-stat-num" style={styles.statNum}>500+</div>
-            <div className="about-stat-label" style={styles.statLabel}>Unique Levels</div>
-          </div>
-        </div>
       </div>
     </section>
   );

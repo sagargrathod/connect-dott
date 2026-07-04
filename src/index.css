@@ -74,10 +74,12 @@ body {
 
 .blob {
   position: absolute;
-  filter: blur(80px);
-  opacity: 0.85;
+  filter: blur(60px);
+  opacity: 0.8;
   animation: morph 20s infinite alternate ease-in-out;
   transition: background 0.5s ease;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .blob-1 {
@@ -132,9 +134,10 @@ body {
 /* Glass panel style */
 .glass-panel {
   background: var(--glass-bg);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s ease, background-color 0.5s ease;
+  will-change: transform;
 }
