@@ -60,6 +60,12 @@ body {
   transform: scale(1) translateY(0);
 }
 
+/* Force elements to be visible in standalone webview pages to prevent blank screen issues */
+.webview-page-container .reveal-on-scroll {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 /* Water Droplets & Glows in Background */
 .blob-container {
   position: fixed;

@@ -95,7 +95,11 @@ function App() {
 
   // Scroll reveal setup using Intersection Observer
   useEffect(() => {
-    if (isWebViewPath) return;
+    if (isWebViewPath) {
+      const elements = document.querySelectorAll('.reveal-on-scroll');
+      elements.forEach((el) => el.classList.add('active'));
+      return;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
