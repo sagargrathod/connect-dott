@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 
 import './App.css';
-
 import Navigation from './navigation';
 import HomePage from './page/HomePage';
 import AboutPage from './page/AboutPage';
