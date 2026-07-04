@@ -27,6 +27,12 @@ function App() {
     } else if (base !== '/' && path === base.slice(0, -1)) {
       path = '/';
     }
+
+    // Support hash routing fallback for static hosting (e.g. /#/privacy-policy)
+    const hash = window.location.hash.toLowerCase();
+    if (hash.startsWith('#/')) {
+      path = hash.slice(1);
+    }
     
     // Check if current URL matches a standalone webview route
     const isLegalOrAboutPath = [
