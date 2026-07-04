@@ -18,7 +18,15 @@ function App() {
 
   // Handle pathname routing and theme query params
   useEffect(() => {
-    const path = window.location.pathname.toLowerCase();
+    let path = window.location.pathname.toLowerCase();
+    
+    // Normalize path by stripping base URL if applicable (e.g. /connect-dott/about -> /about)
+    const base = (import.meta.env.BASE_URL || '/').toLowerCase();
+    if (base !== '/' && path.startsWith(base)) {
+      path = path.slice(base.length - 1);
+    } else if (base !== '/' && path === base.slice(0, -1)) {
+      path = '/';
+    }
     
     // Check if current URL matches a standalone webview route
     const isLegalOrAboutPath = [
