@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <script type="text/javascript">
-      // SPA routing reconstruction
+      // SPA routing reconstruction for HashRouter compatibility
       (function(l) {
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) {
             return s.replace(/~and~/g, '&')
           }).join('?');
+          var targetHash = '#' + (decoded.startsWith('/') ? decoded : '/' + decoded);
           window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
+              l.pathname.slice(0, -1) + (l.hash && l.hash !== '#/' ? l.hash : targetHash)
           );
         }
       }(window.location))
@@ -21,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Dots Connect • Connect and Clear</title>
-    <script type="module" crossorigin src="/connect-dott/assets/index-BYLn71Ls.js"></script>
+    <script type="module" crossorigin src="/connect-dott/assets/index-nhjPR00D.js"></script>
     <link rel="stylesheet" crossorigin href="/connect-dott/assets/index-CeTAbj99.css">
   </head>
   <body>
