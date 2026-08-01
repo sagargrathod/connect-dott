@@ -57,7 +57,7 @@ const TermsPage: React.FC<TermsPageProps> = ({ theme }) => {
     <section className="legal-section reveal-on-scroll" style={styles.container}>
       <div className="legal-header">
         <h2 className="section-title">Terms & Conditions</h2>
-        <p className="section-subtitle">Last Updated: June 13, 2026</p>
+        <p className="section-subtitle">Last Updated: July 4, 2026</p>
         <p className="accordion-p" style={styles.introText}>
           Welcome to Dots Connect! By installing and playing the game, you agree to comply with and be bound by the following Terms & Conditions.
         </p>

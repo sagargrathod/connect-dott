@@ -57,7 +57,7 @@ const PrivacyPage: React.FC<PrivacyPageProps> = ({ theme }) => {
     <section className="legal-section reveal-on-scroll" style={styles.container}>
       <div className="legal-header">
         <h2 className="section-title">Privacy Policy</h2>
-        <p className="section-subtitle">Effective Date: June 13, 2026</p>
+        <p className="section-subtitle">Effective Date: July 4, 2026</p>
         <p className="accordion-p" style={styles.introText}>
           At Dots Connect, we prioritize the privacy of our players. This Privacy Policy details the types of information we collect, how it is used, and your options regarding this data.
         </p>
